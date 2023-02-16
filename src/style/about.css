@@ -1,0 +1,38 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#aboutH1 {
+    text-align: center;
+    padding: 0 25%;
+    font-size: 30px;
+    background-repeat: no-repeat;
+}
+
+#aboutSpan {
+    text-align: center;
+}
+
+#aboutUl {
+    display: flex;
+    flex-direction: column;
+}
+
+#secondSpan{
+    margin-top: 5%;
+}
+
+@media screen and (max-width: 350px) {
+    #aboutH1 {
+        font-size: 20px;
+        padding: 0 0;
+    }
+}
+
+@media (min-width: 351px) and (max-width: 800px) {
+    #aboutH1 {
+        padding: 0 0;
+    }
+}

@@ -23,7 +23,7 @@ export default function Board(props){
       },[props.num,props.poke])
     return (
         <div className='pokemon' onClick={()=> props.selectPokemon(pokemon)}>
-            {<img src={ pokemon && pokemon.sprites.front_default } alt=""></img>}
+            {<img src={ pokemon && pokemon.sprites?.front_default } alt=""></img>}
             {pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1)}
         </div>
     )

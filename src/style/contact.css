@@ -1,0 +1,9 @@
+#contactH1 {
+    text-align: center;
+}
+
+@media  screen and (max-width: 450px) {
+    #contactH1 {
+        font-size: 20px;
+    }
+}
