@@ -1,4 +1,3 @@
-import React from "react";
 import '../style/about.css'
   
 const About = () => {
@@ -13,7 +12,7 @@ const About = () => {
         <li>Saving pokemon teams</li>
         <li>Recommend what pokemon to use against opponents pokemon</li>
         <li>Display a list of typeweaknesses for your opponents pokemon</li>
-        <span id="secondSpan">Latest fixes</span>
+        <span id="secondSpan">Latest fixes:</span>
         <li>Fixed an issue that could cause the page to crash</li>
         <li>Fixed an issue on smaller screen sizes</li>
       </ul>

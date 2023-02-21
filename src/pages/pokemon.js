@@ -135,16 +135,16 @@ const Pokemon = () => {
             <ComparePokemon oneWeakToTwo = {pokeOneWeakToTwo} twoWeakToOne = {pokeTwoWeakToOne} pokeArray = {selectedPokemon} pokeOneWeaknesses = {pokeOneWeaknesses} pokeTwoWeaknesses = {pokeTwoWeaknesses}/>
 
             <div id='pokeInfoBox'>
-                <input class="pokeInput" type='number' value={num || ''} placeholder='Number of Pokemon' onChange={(event)=> dispatch({type: 'SET_NUM', payload: event.target.value})}></input>
-                <button class="pokeButton" onClick={()=> dispatch({type: 'INCREMENT'})}>Increment</button>
-                <button class="pokeButton" onClick={()=> dispatch({type: 'DECREMENT'})}>Decrement</button>
+                <input className="pokeInput" type='number' value={num || ''} placeholder='Number of Pokemon' onChange={(event)=> dispatch({type: 'SET_NUM', payload: event.target.value})}></input>
+                <button className="pokeButton" onClick={()=> dispatch({type: 'INCREMENT'})}>Increment</button>
+                <button className="pokeButton" onClick={()=> dispatch({type: 'DECREMENT'})}>Decrement</button>
                 <p>Type in a Pokemon</p>
                 <form onSubmit={((e)=>{
                     e.preventDefault()
                     getSpecificPokemon()
                     })}>
-                <input class="pokeInput" placeholder='Type a pokemon' value = {specificPokemon.name} onChange={(event)=> dispatch({type: 'ADD_SPECIFIC_POKEMON', payload: event.target.value})}></input>
-                <button class="pokeButton">Select Pokemon</button>
+                <input className="pokeInput" placeholder='Type a pokemon' value = {specificPokemon.name} onChange={(event)=> dispatch({type: 'ADD_SPECIFIC_POKEMON', payload: event.target.value})}></input>
+                <button className="pokeButton">Select Pokemon</button>
                 </form>
             </div>            
         </div>

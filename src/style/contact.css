@@ -1,9 +1,58 @@
-#contactH1 {
-    text-align: center;
+#formList {
+    display: flex;
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+    gap: 10px;
 }
 
-@media  screen and (max-width: 450px) {
-    #contactH1 {
-        font-size: 20px;
-    }
+.formButton {
+    background: rgba(0,0,0,0);
+    border: 1px solid black;
+}
+
+#contactBox {
+    display: flex;
+    justify-content: center;
+}
+
+.fullField {
+    width: 100%;
+}
+
+.halfField {
+    width: 50%;
+    margin: 10px;
+}
+
+.inputBoxes {
+    display: flex;
+}
+
+.messageText {
+    padding: 0;
+    border: black solid 1px;
+    box-sizing: border-box;
+    margin:  10px -1px;
+}
+
+.messageInputDiv {
+    margin-left: 10px;
+}
+
+textarea {
+    resize: none;
+}
+
+.seeThrough {
+    background: rgba(0,0,0,0);
+}
+
+.needsBorder {
+    border: 1px black solid;
+}
+
+.seeThrough::placeholder {
+    color: rgb(0, 0, 0, .5);
+    font-style: italic;
 }

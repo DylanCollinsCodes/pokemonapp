@@ -25,7 +25,7 @@ export default function ComparePokemon(props){
                 <div id='pokeSprites'>
                     {props.pokeArray.map((poke, index)=>
                     <div className='compareBox' key={`${poke.name} - ${index}`}>
-                    {<img class="pokemonSprite" src={ props.pokeArray[index].sprites.front_default } alt=""></img>}
+                    {<img className="pokemonSprite" src={ props.pokeArray[index].sprites.front_default } alt=""></img>}
                     {poke.name.charAt(0).toUpperCase() + poke.name.slice(1)} is selected
                     </div>)}
                 </div>
