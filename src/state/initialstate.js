@@ -6,7 +6,10 @@ const initialState = {
     pokeTwoWeakToOne: false,
     specificPokemon: '',
     pokeOneWeaknesses: [],
-    pokeTwoWeaknesses: []
+    pokeTwoWeaknesses: [],
+    pokemonTeam: [],
+    teamName: '',
+    allPokeTeams: []
   }
 
 export default initialState

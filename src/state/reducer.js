@@ -1,11 +1,17 @@
 export default function reducer(state,action){
-    const {num,pokemonList,selectedPokemon,pokeOneWeakToTwo,pokeTwoWeakToOne,specificPokemon,pokeOneWeaknesses,pokeTwoWeaknesses} = state
+    const {num,pokemonList,selectedPokemon,pokeOneWeakToTwo,pokeTwoWeakToOne,specificPokemon,pokeOneWeaknesses,pokeTwoWeaknesses,pokemonTeam,teamName,allPokeTeams} = state
     switch(action.type){
       case 'FETCH_POKEMON':
         return {...state,pokemonList: action.payload}
 
+      case 'SET_POKEMON_TEAMS':
+        return{...state,allPokeTeams: action.payload}
+
       case 'FETCH_SINGLE_POKEMON':
         return {...state,pokemonList: [...pokemonList,action.payload]}
+
+      case 'FETCH_POKEMON_TEAM':
+        return {...state,pokemonTeam: [...pokemonTeam,action.payload]}
 
       case 'INCREMENT':
         return {...state, num: num + 1}  
@@ -21,6 +27,9 @@ export default function reducer(state,action){
 
       case 'ADD_SPECIFIC_POKEMON':
         return {...state,specificPokemon: action.payload}
+
+      case 'POKEMON_TEAM_NAME':
+        return {...state,teamName: action.payload}
 
       default:
         console.log(`${action.type} is an invalid  update`)

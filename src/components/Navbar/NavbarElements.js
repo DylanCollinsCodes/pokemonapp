@@ -19,7 +19,6 @@ export const NavLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0 10px;
   height: 100%;
   cursor: pointer;
   &.active {
@@ -44,13 +43,20 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -24px;
+  justify-content: center;
+  gap: 2%;
+  flex-grow: 1;
   
-  @media (min-width: 406px) and (max-width: 768px) {
-    font-size: 17px;
+  @media (min-width: 561px) and (max-width: 990px) {
+    font-size: 20px;
   }
 
-  @media screen and (max-width: 405px) {
+  
+  @media (min-width: 340px) and (max-width: 560px) {
     font-size: 12px
+  }
+
+  @media screen and (max-width: 339px) {
+    font-size: 11px
   }
 `;
