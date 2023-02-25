@@ -7,102 +7,131 @@
     );
   }
   
-  #pokeInfoBox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    background-image: 
-    linear-gradient(
-      rgb(199, 44, 44), rgb(66, 44, 44)
-    );
-    color: white;
-  }
-  
-  #pokeSprites {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 250px;
-    width: 200px;
-    padding: 0 5px;
-    border: 1px black solid;
-    background-image: 
-    linear-gradient(
-      rgb(69, 67, 67), gray
-    );
-  }
-  
-  #pokeText {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 250px;
-    width: 250px;
-    border: 1px black solid;
-    background-image: 
-    linear-gradient(
-     gray, rgb(69, 67, 67)
-    );
-  }
-  
-  .compareBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #fixedDiv {
+#pokeInfoBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  background-image: 
+  linear-gradient(
+    rgb(199, 44, 44), rgb(66, 44, 44)
+  );
+  color: white;
+}
+
+#pokeSprites {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 250px;
+  width: 200px;
+  padding: 0 5px;
+  border: 1px black solid;
+  background-image: 
+  linear-gradient(
+    rgb(69, 67, 67), gray
+  );
+}
+
+#pokeText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  border: 1px black solid;
+  background-image: 
+  linear-gradient(
+   gray, rgb(69, 67, 67)
+  );
+}
+
+.compareBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#fixedDiv {
     position: sticky;
     top: 0;
     background: white;
     width: 100%;
   }
   
-  .pokemon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    width: 250px
-  }
-  
-  #pokemonHolder {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    color: white;
-  }
-  
-  .pokemonSprite {
-    width: 100px;
-  }
-  
-  @media screen and (max-width: 350px) {
-    .pokemonSprite {
-      width: 65px;
-    }
+.pokemon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  width: 250px
+}
 
-    #pokeText {
-      height: 200px;
-      width: 55%;
-      font-size: 12px;
-      border: 1px black solid;
-    }
+#pokemonHolder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+}
 
-    #pokeSprites {
-      height: 200px;
-      width: 45%;
-      padding: 0 10px;
-      border: 1px black solid;
-      font-size: 15px;
-    }
+.pokemonSprite {
+  width: 100px;
+}
+  
+@media screen and (max-width: 350px) {
+   .pokemonSprite {
+     width: 65px;
+   }
+   #pokeText {
+     height: 200px;
+     width: 55%;
+     font-size: 12px;
+     border: 1px black solid;
+   }
 
-    .pokeButton,.pokeInput {
-      font-size: 8px;
-    }
-  }
+#pokeSprites {
+     height: 200px;
+     width: 45%;
+     padding: 0 10px;
+     border: 1px black solid;
+     font-size: 15px;
+   }
+   .pokeButton,.pokeInput {
+     font-size: 8px;
+   }
+ }
+
+button {
+  background-image:
+  linear-gradient(
+    to top right,
+    rgb(162, 111, 95),rgb(103, 28, 28)
+    );
+  border-image:
+  linear-gradient(
+      to top right,
+      rgb(0, 0, 0), red, rgb(84, 21, 21),rgb(0, 0, 0)
+      ) 1;
+}
+
+input {
+  background-image:
+  linear-gradient(
+    to top left,
+    rgb(86, 86, 86), rgb(160, 160, 160)
+    );
+  border: 1px solid;
+  border-image:
+    linear-gradient(
+        to right,
+     rgb(136, 55, 55), red, rgb(84, 21, 21)
+    ) 1;
+}
+
+::placeholder {
+  color: rgb(75, 38, 38)
+}
