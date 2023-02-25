@@ -26,10 +26,10 @@ const TeamBuilder = () => {
           pokeNames.push(pokemonTeam[i].name)
         }
         localStorage.setItem(teamName, JSON.stringify(pokeNames))
-      }    
+      }
+      loadPokemonTeams()
+      dispatch({type: 'POKEMON_TEAM_NAME_POKETEAM'})
     }
-    loadPokemonTeams()
-    dispatch({type: 'POKEMON_TEAM_NAME_POKETEAM'})
   }
 
   function loadPokemonTeams(){
