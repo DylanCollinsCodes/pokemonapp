@@ -74,6 +74,7 @@ function deleteTeam(teamName){
         <form className='teamForm' onSubmit={(e)=>{
           e.preventDefault()
           savePokemonTeam(teamName)
+          document.getElementsByClassName('teamForm').reset()
         }}>
         <input className='teamInputBox' placeholder='Team Name' value = {teamName} onChange={(event) => dispatch({type: 'POKEMON_TEAM_NAME', payload: event.target.value})}></input>
         <button>Save Team</button>
