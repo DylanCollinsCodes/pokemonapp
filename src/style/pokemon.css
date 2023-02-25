@@ -118,9 +118,9 @@ button {
     );
   border-image:
   linear-gradient(
-      to top right,
-      rgb(0, 0, 0), red, rgb(84, 21, 21),rgb(0, 0, 0)
-      ) 1;
+    to top right,
+    rgb(0, 0, 0), red, rgb(84, 21, 21),rgb(0, 0, 0)
+    ) 1;
 }
 
 input {

@@ -69,6 +69,7 @@ function clearTeams(){
 }
 
 function updateTeam(teamName){
+  dispatch({type: 'DELETE_POKEMON_TEAM'})
   let updatedTeam = localStorage.getItem(teamName)
   updatedTeam = JSON.parse(updatedTeam)
   for(let i = 0; i < allPokeTeams.length; i++){
@@ -118,17 +119,17 @@ function selectPokemon(clickedPokemon){
         </div>
       </div>
         
-        <div id='pokemonHolder'>
-          {pokemonTeam.map((poke, index)=>(
-          <Board poke = {poke} key = {index} selectPokemon = {selectPokemon}/>
-          ))}
-        </div>
+      <div id='pokemonHolder'>
+        {pokemonTeam.map((poke, index)=>(
+        <Board poke = {poke} key = {index} selectPokemon = {selectPokemon}/>
+        ))}
+      </div>
 
-        <div id='pokeTeamHolderMain'>
-          {allPokeTeams.map((poke, index)=>(
-           poke && <Teams poke = {poke} key = {index} deleteTeam = {deleteTeam} updateTeam = {updateTeam}/>
-          ))}
-        </div>
+      <div id='pokeTeamHolderMain'>
+        {allPokeTeams.map((poke, index)=>(
+         poke && <Teams poke = {poke} key = {index} deleteTeam = {deleteTeam} updateTeam = {updateTeam}/>
+        ))}
+      </div>
     </div>
   );
 };
