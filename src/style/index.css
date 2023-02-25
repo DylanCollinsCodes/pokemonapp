@@ -1,15 +1,94 @@
-#indexH1 {
-    text-align: center;
-}
-
-#indexP {
-    text-align: center;
+.indexHome {
+    padding: 5px;
+    margin-top: 10px;
     font-size: 20px;
-    padding: 0 25%;
+    background-image: 
+    linear-gradient(
+    to top right,
+      rgba(244, 142, 142, 0.418), rgba(207, 56, 18, 0.418), rgba(245, 118, 118, 0.418)
+    );    
+    border-radius: 10px;
+    width: 70%;
 }
 
-@media  screen and (max-width: 550px) {
-    #indexP {
-        padding: 0;
+#flexThisDiv {
+    display: flex;
+    justify-content: flex-start;
+    width: 70%;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.shrinkThisDiv {
+    margin-top: 10px;
+}
+
+.smallerText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    height: 170px;
+}
+
+@media (min-width: 581px) and (max-width: 783px) {
+    .smallerText {
+        height: 250px;
     }
+    .bigTextSmall {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 580px) {
+    .smallerText {
+        font-size: 10px;
+    }
+
+    .bigTextSmall {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .smallerText {
+        font-size: 8px;
+    }
+
+    .bigTextSmall {
+        font-size: 10px;
+    }
+}
+
+.centerMe {
+    text-align: center;
+}
+
+a {
+    color: rgb(80, 4, 4);
+}
+
+#indexHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.margin-right {
+    margin-right: 10px;
+    width: 50%;
+}
+
+.customHeaderHeight {
+    height: 20px;
+}
+
+.margin-left {
+    margin-left: 10px;
+    width: 50%;
 }
