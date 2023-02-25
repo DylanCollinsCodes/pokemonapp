@@ -150,6 +150,7 @@ const Pokemon = () => {
         </div>
         
         <div id='pokemonHolder'>
+            {console.log('hit')}
             {pokemonList.map((poke, index)=>(
             poke && <Board poke = {poke} key = {index} selectPokemon = {selectPokemon} num = {num}/>
             ))}

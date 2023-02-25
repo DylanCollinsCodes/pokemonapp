@@ -11,6 +11,7 @@ export default function reducer(state,action){
         return {...state,pokemonList: [...pokemonList,action.payload]}
 
       case 'FETCH_POKEMON_TEAM':
+        if(pokemonTeam.length >= 6)pokemonTeam.shift()
         return {...state,pokemonTeam: [...pokemonTeam,action.payload]}
 
       case 'INCREMENT':

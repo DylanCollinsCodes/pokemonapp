@@ -1,0 +1,93 @@
+#teamBuilderBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: 
+    linear-gradient(
+     gray, rgb(69, 67, 67), gray
+    );
+}
+
+.teamForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loadTeamsButton {
+    height: 42.67px;
+}
+
+.pokeTeamHolder {
+    display: flex;
+    flex-wrap: wrap;
+    width: 45%;
+    margin: 1%;
+    border: 1px solid;
+    border-image:
+    linear-gradient(
+        to right,
+     black, red, black
+    ) 1;
+}
+
+.teamTopper {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    border-image:
+    linear-gradient(
+        to right,
+     black, red, black
+    ) 1;
+    box-sizing: border-box;
+}
+
+.pokemonInTeamName {
+    padding-bottom: 5px;
+}
+
+#pokeTeamHolderMain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokeSprites {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    border: 1px solid;
+    border-image:
+    linear-gradient(
+        to right,
+     black, red, black
+    ) 1;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 400px) {
+    #teamBuilderBox *{
+        font-size: 10px;
+    }
+
+    .teamInputBox {
+        width: 100px;
+    }
+
+    .loadTeamsButton {
+        height: 34.67px;
+    }
+
+    .pokeTeamHolder,.teamDeleteButton {
+        font-size: 10px;
+    }
+
+
+}
