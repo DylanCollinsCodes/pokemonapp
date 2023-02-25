@@ -26,7 +26,7 @@ export default function Teams(props){
     return (
         <div className='pokeTeamHolder'>
             <div className='teamTopper'>{teamName}</div>
-            <div className='teamTopper'><button className='teamDeleteButton'>Delete Team</button></div>
+            <div className='teamTopper'><button className='teamDeleteButton' onClick={(teamNam) => props.deleteTeam(teamName)}>Delete Team</button></div>
             {pokemonTeam.map((pokemon, index) => <div className='pokeSprites' key={`${pokemon} - ${index}`}>
             {<img src={pokemon.Image} alt=""></img>}
             <div className='pokemonInTeamName'>{pokemon.Name}</div>

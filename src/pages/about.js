@@ -9,7 +9,8 @@ const About = () => {
       <ul id="aboutUl">
         <span id="aboutSpan">Features that are on their way:</span>
         <li>Login/Sign up</li>
-        <li>Saving pokemon teams</li>
+        <li>Saving pokemon teams - 🗹</li>
+        <li>Editing pokemon teams</li>
         <li>Recommend what pokemon to use against opponents pokemon</li>
         <li>Display a list of typeweaknesses for your opponents pokemon</li>
         <span id="secondSpan">Latest fixes:</span>

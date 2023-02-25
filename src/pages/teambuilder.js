@@ -29,7 +29,7 @@ const TeamBuilder = () => {
     }
   }
 
-  function loadPokemonTeams(count){
+  function loadPokemonTeams(){
     let allPokeTeams = []
     for (let i = 0; i < localStorage.length; i++){
       if(localStorage.key(i) === 'debug')continue
@@ -45,6 +45,17 @@ const TeamBuilder = () => {
       pokesTeam.Pokemon.push(pokeName)
       }
       allPokeTeams.push(pokesTeam)
+  }
+  console.log(allPokeTeams)
+  dispatch({type: 'SET_POKEMON_TEAMS', payload: allPokeTeams})
+}
+
+function deleteTeam(teamName){
+  for(let i = 0; i < allPokeTeams.length; i++){
+    if(allPokeTeams[i].Name === teamName){
+      localStorage.removeItem(teamName)
+      allPokeTeams.splice(i, 1)
+    }
   }
   dispatch({type: 'SET_POKEMON_TEAMS', payload: allPokeTeams})
 }
@@ -80,7 +91,7 @@ const TeamBuilder = () => {
 
         <div id='pokeTeamHolderMain'>
           {allPokeTeams.reverse().map((poke, index)=>(
-           poke && <Teams poke = {poke} key = {index}/>
+           poke && <Teams poke = {poke} key = {index} deleteTeam = {deleteTeam}/>
           ))}
         </div>
     </div>
