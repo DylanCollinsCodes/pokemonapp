@@ -15,7 +15,7 @@
     flex-direction: column;
 }
 
-.loadTeamsButton {
+.loadTeamsButton, .clearTeamsButton {
     height: 42.67px;
 }
 
@@ -72,16 +72,16 @@
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
     #teamBuilderBox *{
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .teamInputBox {
-        width: 100px;
+        width: 80px;
     }
 
-    .loadTeamsButton {
+    .loadTeamsButton, .clearTeamsButton {
         height: 34.67px;
     }
 

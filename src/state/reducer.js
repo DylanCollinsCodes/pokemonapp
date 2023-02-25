@@ -32,6 +32,12 @@ export default function reducer(state,action){
       case 'POKEMON_TEAM_NAME':
         return {...state,teamName: action.payload}
 
+      case 'POKEMON_TEAM_NAME_POKETEAM':
+        return {...state,teamName: '', pokemonTeam: []}
+      
+      case 'CLEAR_POKE_TEAMS':
+        return {...state,allPokeTeams: []}
+
       default:
         console.log(`${action.type} is an invalid  update`)
         return 

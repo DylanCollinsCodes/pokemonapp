@@ -143,7 +143,7 @@ const Pokemon = () => {
                     e.preventDefault()
                     getSpecificPokemon()
                     })}>
-                <input className="pokeInput" placeholder='Type a pokemon' value = {specificPokemon.name} onChange={(event)=> dispatch({type: 'ADD_SPECIFIC_POKEMON', payload: event.target.value})}></input>
+                <input className="pokeInput" placeholder='Type a pokemon' onChange={(event)=> dispatch({type: 'ADD_SPECIFIC_POKEMON', payload: event.target.value})}></input>
                 <button className="pokeButton">Select Pokemon</button>
                 </form>
             </div>            

@@ -15,6 +15,7 @@ const TeamBuilder = () => {
         dispatch({type: 'FETCH_POKEMON_TEAM', payload: res.data})
     })
     }
+    dispatch({type: 'ADD_SPECIFIC_POKEMON', payload: ''})
   }
 
   function savePokemonTeam(teamName){
@@ -27,6 +28,8 @@ const TeamBuilder = () => {
         localStorage.setItem(teamName, JSON.stringify(pokeNames))
       }    
     }
+    loadPokemonTeams()
+    dispatch({type: 'POKEMON_TEAM_NAME_POKETEAM'})
   }
 
   function loadPokemonTeams(){
@@ -60,27 +63,33 @@ function deleteTeam(teamName){
   dispatch({type: 'SET_POKEMON_TEAMS', payload: allPokeTeams})
 }
 
+function clearTeams(){
+  dispatch({type: 'CLEAR_POKE_TEAMS'})
+}
+
   return (
     <div>
       <div id='teamBuilderBox'>
-      <form className='teamForm' onSubmit={((e)=>{
+      <form id='teamFormOne' className='teamForm' onSubmit={((e)=>{
             e.preventDefault()
             getSpecificPokemon()
             })}>
-            <input className='teamInputBox' placeholder='Type a pokemon' value = {specificPokemon.name} onChange={(event)=> dispatch({type: 'ADD_SPECIFIC_POKEMON', payload: event.target.value})}></input>
+            <input className='teamInputBox' placeholder='Type a pokemon' value = {specificPokemon} onChange={(event)=> dispatch({type: 'ADD_SPECIFIC_POKEMON', payload: event.target.value})}></input>
             <button>Select Pokemon</button>
         </form>
 
-        <form className='teamForm' onSubmit={(e)=>{
-          e.preventDefault()
-          savePokemonTeam(teamName)
-          document.getElementsByClassName('teamForm').reset()
-        }}>
-        <input className='teamInputBox' placeholder='Team Name' value = {teamName} onChange={(event) => dispatch({type: 'POKEMON_TEAM_NAME', payload: event.target.value})}></input>
-        <button>Save Team</button>
-        </form>
+        <form id='teamFormTwo' className='teamForm' onSubmit={(e)=>{
+            e.preventDefault()
+            savePokemonTeam(teamName)
+          }}>
+          <input className='teamInputBox' placeholder='Team Name' value = {teamName} onChange={(event) => dispatch({type: 'POKEMON_TEAM_NAME', payload: event.target.value})}></input>
+          <button>Save Team</button>
+          </form>
         <div>
           <button className='loadTeamsButton' onClick={loadPokemonTeams}>Load Teams</button>
+        </div>
+        <div>
+          <button onClick={clearTeams} className='clearTeamsButton'>Clear Teams</button>
         </div>
       </div>
         
@@ -91,7 +100,7 @@ function deleteTeam(teamName){
         </div>
 
         <div id='pokeTeamHolderMain'>
-          {allPokeTeams.reverse().map((poke, index)=>(
+          {allPokeTeams.map((poke, index)=>(
            poke && <Teams poke = {poke} key = {index} deleteTeam = {deleteTeam}/>
           ))}
         </div>
