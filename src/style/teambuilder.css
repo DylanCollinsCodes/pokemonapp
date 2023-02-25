@@ -77,6 +77,10 @@
         font-size: 9px;
     }
 
+    ::placeholder {
+        font-size: 9px;
+    }
+
     .teamInputBox {
         width: 80px;
     }
@@ -85,9 +89,33 @@
         height: 34.67px;
     }
 
-    .pokeTeamHolder,.teamDeleteButton {
-        font-size: 10px;
+    .pokeTeamHolder {
+        font-size: 16px;
+    }
+    
+    .teamDeleteButton {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .teamDeleteButton {
+        width: 100%;
+    }
+}
+
+@media (min-width: 451px) and (max-width: 495px) {
+    .teamInputBox {
+        width: 90px;
     }
 
+    #teamBuilderBox *{
+        font-size: 11px;
+    }
+}
 
+@media (min-width: 451px) and (max-width: 492px) {
+    .teamDeleteButton {
+        font-size: 18px;
+    }
 }

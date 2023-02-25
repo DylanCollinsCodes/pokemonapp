@@ -9,7 +9,7 @@ import Board from '../components/board'
 const TeamBuilder = () => {
   const [ {num,pokemonList,selectedPokemon,pokeOneWeakToTwo,pokeTwoWeakToOne,specificPokemon,pokeOneWeaknesses,pokeTwoWeaknesses,pokemonTeam,teamName,allPokeTeams}, dispatch ] = useReducer(reducer,initialState)
 
-  function getSpecificPokemon(){
+  function getSpecificPokemon(specificPokemon){
     if(specificPokemon){
         axios.get(`https://pokeapi.co/api/v2/pokemon/${specificPokemon.toLowerCase()}`).then((res)=>{
         dispatch({type: 'FETCH_POKEMON_TEAM', payload: res.data})
@@ -26,6 +26,8 @@ const TeamBuilder = () => {
           pokeNames.push(pokemonTeam[i].name)
         }
         localStorage.setItem(teamName, JSON.stringify(pokeNames))
+      }else{
+        localStorage.removeItem(teamName)
       }
       loadPokemonTeams()
       dispatch({type: 'POKEMON_TEAM_NAME_POKETEAM'})
@@ -49,7 +51,6 @@ const TeamBuilder = () => {
       }
       allPokeTeams.push(pokesTeam)
   }
-  console.log(allPokeTeams)
   dispatch({type: 'SET_POKEMON_TEAMS', payload: allPokeTeams})
 }
 
@@ -67,12 +68,36 @@ function clearTeams(){
   dispatch({type: 'CLEAR_POKE_TEAMS'})
 }
 
+function updateTeam(teamName){
+  let updatedTeam = localStorage.getItem(teamName)
+  updatedTeam = JSON.parse(updatedTeam)
+  for(let i = 0; i < allPokeTeams.length; i++){
+    if(allPokeTeams[i].Name === teamName){
+      allPokeTeams.splice(i, 1)
+    }
+  }
+  dispatch({type: 'UPDATE_TEAMS', payload: teamName})
+  for(let i = 0; i < updatedTeam.length; i++){
+    getSpecificPokemon(updatedTeam[i])
+  }
+}
+
+function selectPokemon(clickedPokemon){
+  console.log(pokemonTeam)
+  for(let i = 0; i < pokemonTeam.length; i++){
+    if(clickedPokemon === pokemonTeam[i]){
+      pokemonTeam.splice(i,1)
+    }
+  }
+  dispatch({type: 'UPDATE_POKEMON_TEAM', payload: pokemonTeam})
+}
+
   return (
     <div>
       <div id='teamBuilderBox'>
       <form id='teamFormOne' className='teamForm' onSubmit={((e)=>{
             e.preventDefault()
-            getSpecificPokemon()
+            getSpecificPokemon(specificPokemon)
             })}>
             <input className='teamInputBox' placeholder='Type a pokemon' value = {specificPokemon} onChange={(event)=> dispatch({type: 'ADD_SPECIFIC_POKEMON', payload: event.target.value})}></input>
             <button>Select Pokemon</button>
@@ -95,13 +120,13 @@ function clearTeams(){
         
         <div id='pokemonHolder'>
           {pokemonTeam.map((poke, index)=>(
-          <Board poke = {poke} key = {index}/>
+          <Board poke = {poke} key = {index} selectPokemon = {selectPokemon}/>
           ))}
         </div>
 
         <div id='pokeTeamHolderMain'>
           {allPokeTeams.map((poke, index)=>(
-           poke && <Teams poke = {poke} key = {index} deleteTeam = {deleteTeam}/>
+           poke && <Teams poke = {poke} key = {index} deleteTeam = {deleteTeam} updateTeam = {updateTeam}/>
           ))}
         </div>
     </div>

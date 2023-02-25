@@ -29,8 +29,14 @@ export default function reducer(state,action){
       case 'ADD_SPECIFIC_POKEMON':
         return {...state,specificPokemon: action.payload}
 
+      case 'UPDATE_POKEMON_TEAM':
+        return {...state,pokemonTeam: pokemonTeam}
+
       case 'POKEMON_TEAM_NAME':
         return {...state,teamName: action.payload}
+
+      case 'UPDATE_TEAMS':
+        return {...state, teamName: action.payload}
 
       case 'POKEMON_TEAM_NAME_POKETEAM':
         return {...state,teamName: '', pokemonTeam: []}
