@@ -138,7 +138,7 @@ const Pokemon = () => {
                 <input className="pokeInput" type='number' value={num || ''} placeholder='Number of Pokemon' onChange={(event)=> dispatch({type: 'SET_NUM', payload: event.target.value})}></input>
                 <button className="pokeButton" onClick={()=> dispatch({type: 'INCREMENT'})}>Increment</button>
                 <button className="pokeButton" onClick={()=> dispatch({type: 'DECREMENT'})}>Decrement</button>
-                <p>Type in a Pokemon</p>
+                <p id='typePokemon'>Type in a Pokemon</p>
                 <form onSubmit={((e)=>{
                     e.preventDefault()
                     getSpecificPokemon()

@@ -9,6 +9,7 @@
 .formButton {
     background: rgba(0,0,0,0);
     border: 1px solid black;
+    color: black;
 }
 
 #contactBox {
@@ -20,9 +21,35 @@
     width: 100%;
 }
 
+
+
 .halfField {
     width: 50%;
     margin: 10px;
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+    .messageText {
+        width: 87%;
+    }
+
+    .halfField {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 399px) {
+    .messageText {
+        width:  80%;
+    }
+
+    ::placeholder {
+        font-size: 13px;
+    }
+
+    .halfField {
+        width: 35%;
+    }
 }
 
 .inputBoxes {
@@ -37,7 +64,9 @@
 }
 
 .messageInputDiv {
-    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.5%;
 }
 
 textarea {

@@ -100,12 +100,17 @@
      border: 1px black solid;
      font-size: 15px;
    }
-   .pokeButton,.pokeInput {
+   .pokeButton,.pokeInput, #typePokemon {
      font-size: 8px;
    }
  }
 
+#typePokemon {
+  color: black
+}
+
 button {
+  color: black;
   background-image:
   linear-gradient(
     to top right,
